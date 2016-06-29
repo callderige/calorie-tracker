@@ -1,0 +1,118 @@
+<template name="calorieTrackerHome">
+	<div class="row">
+		<div class="col-lg-12">
+			<form class="cal-tracker-form">
+				<div class="panel panel-default">
+			    	<div class="panel-heading">Enter food/meal name (optional) and number of calories consumed.</div>
+			    	<br>
+			    	<div class="row">
+				    	<div class="col-lg-4 col-lg-offset-1">
+				    		<label>Meal/food name</label>
+					    	<input class="form-control" type="text" name="mealEntry" placeholder="Raw potato (medium sized)">
+					    </div>
+
+					    <div class="col-lg-2">
+					    	<label>Calories</label>
+					    	<input class="form-control" type="number" name="calorieEntry" placeholder="164">
+				    	</div>
+
+				    	<div class="col-lg-2">
+					    	<label>Current date</label>
+					    	<input class="form-control" id="date-entry" name="dateEntry" disabled value="{{showDate}}">
+				    	</div>
+
+				    	<div class="col-lg-2">
+				    		<label>Record entries</label>
+				    		<input class="form-control cal-submit" type="submit">
+				    	</div>
+			    	</div>
+			    	<br>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12 well">
+			<div class="row years">
+				<center>
+					<div class="year-group input-group">
+						{{#each years}}				
+							<input type="radio" id="{{year}}" class="year-btn" name="year" value="{{year}}">
+							<label for="{{year}}" class="btn btn-default">{{year}}</label>
+						{{/each}}
+					</div>
+				</center>				
+			</div>
+
+			<div class="row months">
+				<div class="col-lg-12">
+					<div class="month-group input-group col-lg-12">
+						{{#each months}}
+							<input type="radio" id="{{month}}" class="month-btn" name="month" value="{{month}}">
+							<label for="{{month}}" class="btn btn-default">{{month}}</label>
+						{{/each}}
+					</div>
+				</div>			
+			</div>
+
+			<hr class="hr-style-calendar">
+
+			<div class="row days">
+				<div class="col-lg-12">
+					<button type="button" class="col-lg-1 day-btn btn btn-default" id="dayBtn" value="1">1 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="2">2 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="3">3 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="4">4 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="5">5 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="6">6 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="7">7 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="8">8 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="9">9 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="10">10 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="11">11 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="12">12 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="13">13 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="14">14 </button>			
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="15">15 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="16">16 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="17">17 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="18">18 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="19">19 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="20">20 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="21">21 </button>				
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="22">22 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="23">23 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="24">24 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="25">25 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="26">26 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="27">27 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="28">28 </button>			
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="29">29 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="30">30 </button>
+					<button type="button" class="col-lg-1 day-btn btn btn-default" value="31">31 </button>
+					<b disabled class="col-lg-6 date-style">{{calendarDate}}</b>
+				</div>					
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class="modal" id="dayModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Date Selected: {{modalDate}}</h4>
+				</div>
+				<div class="modal-body">
+					<p class="well"> Hello </p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="close" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

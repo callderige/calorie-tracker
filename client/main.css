@@ -1,0 +1,104 @@
+.main{
+	padding-top: 4%;
+}
+
+.info-white{
+	background-color: white;
+	color: #333;
+	border: 1px solid #e3e3e3;
+}
+
+.day-btn{
+	width: 13.84%;
+	height: 105px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	box-shadow: 0 3px 5px #888888;
+}
+
+.day-btn:focus{
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.date-style{
+	font-size: 70px;
+	width: 56.7%;
+	height: 95px;
+	text-align: center;
+}
+
+.hr-style-calendar{
+	border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.month-group input[type="radio"]:checked + label{
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.month-group input[type="radio"]{
+	display: none;
+}
+
+.month-group label {
+	width: 8.3%;
+	border-radius: 0px;
+	box-shadow: 0 3px 5px #888888;
+}
+
+.year-group input[type="radio"]:checked + label{
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.year-group input[type="radio"]{
+	display: none;
+}
+
+.year-group label {
+	border-radius: 0px;
+	box-shadow: 0 3px 5px #888888;
+}
+
+.years{
+	margin-bottom: 5px;
+}
+
+.months{
+	margin-bottom: 5px;
+}
+
+.cal-submit:hover{
+	background-color: #eee;
+}
+
+.cal-submit:active{
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+	
+}
+
+.cal-submit:focus{
+	border-color: #ccc;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+

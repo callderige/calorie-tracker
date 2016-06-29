@@ -1,0 +1,47 @@
+ <template name="mainNav">
+     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">{{#if currentUser}}{{currentUser.username}}{{else}}Please sign in{{/if}}</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                {{#if currentUser}}
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/calorieTrackerHome">Calorie Tracker</a>
+                    </li>
+                </ul>
+                {{/if}}
+
+                {{#if currentUser}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="logout">Logout</a>
+                    </li>
+                </ul>
+                {{else}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+    <div class="container main">
+       {{> yield }}
+    </div>
+</template>
